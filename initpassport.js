@@ -1,4 +1,4 @@
-const GoogleStrategy = require("passport-google-oauth20").Strategy;
+const GoogleStrategy = require("passport-google-oauth2").Strategy;
 
 
 function init(passport){
@@ -7,12 +7,14 @@ function init(passport){
         return done(null , profile);
     }
 
+    //Update clientId and clientSecret from the google cloud console
+
     passport.use(new GoogleStrategy({
-        clientID : "clientId",
+        clientID : "",
         clientSecret : "",
-        callbackURL : "" , 
+        callbackURL : "http://localhost:3000/oauth/google/callback" , 
         passReqToCallback : true
-    }) , authenticateUser)
+    } , authenticateUser))
 
     passport.serializeUser(function(user, done) {
         done(null, user);
