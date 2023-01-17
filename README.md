@@ -1,7 +1,7 @@
 # passport-google-oauth2.0
 Implemented a basic login mechanism using passport-google-oauth2 strategy 
 
-<br> <br>
+
 
 Routes-
 <br>
